@@ -30,7 +30,7 @@ const slice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         (state.loading = false),
           (state.error = null),
-          (state.items = action.payload);
+          (state.user = action.payload);
       })
       .addCase(register.rejected, handleRejected)
 

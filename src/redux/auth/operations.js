@@ -7,9 +7,9 @@ const instance = axios.create({
 
 export const register = createAsyncThunk(
   "auth/register",
-  async (_, thunkAPI) => {
+  async (credentials, thunkAPI) => {
     try {
-      const { data } = await instance.post("/users/signup");
+      const { data } = await instance.post("/users/signup",credentials);
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
