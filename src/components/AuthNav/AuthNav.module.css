@@ -1,0 +1,11 @@
+.authWrap {
+    display: flex;
+    gap: 20px;
+}
+
+.authLink {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
