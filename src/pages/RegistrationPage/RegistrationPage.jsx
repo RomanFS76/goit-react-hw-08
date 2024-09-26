@@ -1,9 +1,8 @@
-import { Field, Formik } from "formik";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Form } from "react-router-dom";
 import * as Yup from "yup";
 import { register } from "../../redux/auth/operations";
+import { Field, Formik, Form } from "formik";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,14 +24,11 @@ const initialValues = { name: "", email: "", password: "" };
 const RegistrationPage = () => {
   const dispath = useDispatch();
 
-
-
   const handleSubmit = (values, action) => {
     console.log(values);
     dispath(register(values));
     action.resetForm();
   };
-
 
   return (
     <div>
