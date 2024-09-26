@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
 import { register } from "../../redux/auth/operations";
 import { Field, Formik, Form } from "formik";
+import css from "./RegistrationPage.module.css";
 
 const FeedbackSchema = Yup.object().shape({
   name: Yup.string()
@@ -39,17 +40,17 @@ const RegistrationPage = () => {
         validationSchema={FeedbackSchema}
       >
         <Form autoComplete="off">
-          <label>
+          <label className={css.label}>
             Name
-            <Field type="text" name="name"></Field>
+            <Field type="text" name="name" className={css.field}></Field>
           </label>
-          <label>
+          <label className={css.label}>
             Email
-            <Field type="email" name="email"></Field>
+            <Field type="email" name="email" className={css.field}></Field>
           </label>
-          <label>
+          <label className={css.label}>
             Password
-            <Field type="password" name="password"></Field>
+            <Field type="password" name="password" className={css.field}></Field>
           </label>
           <button type="submit">Register</button>
         </Form>

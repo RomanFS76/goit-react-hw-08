@@ -9,7 +9,7 @@ const AppBar = () => {
     <div>
       <header className={css.header}>
         <Navigation />
-        <UserMenu />
+        {/* <UserMenu /> */}
         <AuthNav />
       </header>
     </div>
