@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import "./App.css";
 // import ContactForm from "./components/ContactForm/ContactForm";
 // import ContactList from "./components/ContactList/ContactList";
 // import SearchBox from "./components/SearchBox/SearchBox";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "./redux/contacts/operations";
+// import { fetchContacts } from "./redux/contacts/operations";
 import { selectError, selectLoading } from "./redux/contacts/selectors";
 import Layout from "./components/Layout/Layout";
 import { Route, Routes } from "react-router-dom";
@@ -18,9 +18,9 @@ function App() {
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
     <>
