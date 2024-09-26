@@ -1,10 +1,20 @@
 .field {
-    display: block;
-    margin-bottom: 15px;
-    width: 330px;
+  display: block;
+  margin-bottom: 15px;
+  width: 330px;
+  margin-top: 10px;
 }
 
 .label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btnReg {
+    width: 200px;
     font-size: 20px;
     font-weight: 600;
+    border: 1px solid black;
+    height: 30px;
+
 }

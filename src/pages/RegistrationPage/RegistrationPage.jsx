@@ -52,7 +52,7 @@ const RegistrationPage = () => {
             Password
             <Field type="password" name="password" className={css.field}></Field>
           </label>
-          <button type="submit">Register</button>
+          <button type="submit" className={css.btnReg}>Register</button>
         </Form>
       </Formik>
     </div>
