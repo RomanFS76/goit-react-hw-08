@@ -1,24 +1,24 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import { register } from "../../redux/auth/operations";
 import { Field, Formik, Form } from "formik";
 import css from "./RegistrationPage.module.css";
 
-const FeedbackSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string()
-    .min(8, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-  password: Yup.string()
-    .min(8, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
-});
+// const FeedbackSchema = Yup.object().shape({
+//   name: Yup.string()
+//     .min(2, "Too Short!")
+//     .max(50, "Too Long!")
+//     .required("Required"),
+//   email: Yup.string()
+//     .min(8, "Too Short!")
+//     .max(50, "Too Long!")
+//     .required("Required"),
+//   password: Yup.string()
+//     .min(8, "Too Short!")
+//     .max(50, "Too Long!")
+//     .required("Required"),
+// });
 
 const initialValues = { name: "", email: "", password: "" };
 
@@ -37,9 +37,9 @@ const RegistrationPage = () => {
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validationSchema={FeedbackSchema}
+        // validationSchema={FeedbackSchema}
       >
-        <Form autoComplete="off">
+        <Form autoComplete="on">
           <label className={css.label}>
             Name
             <Field type="text" name="name" className={css.field}></Field>

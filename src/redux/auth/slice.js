@@ -3,13 +3,13 @@ import { register, login, logOut,refresh } from "./operations";
 
 
 
-const handlePending = (state) => {
-  state.loading = true;
-};
+// const handlePending = (state) => {
+//   state.loading = true;
+// };
 
-const handleRejected = (state, action) => {
-  (state.loading = false), (state.error = action.payload);
-};
+// const handleRejected = (state, action) => {
+//   (state.loading = false), (state.error = action.payload);
+// };
 
 const initialState = {
   user: {
@@ -26,21 +26,21 @@ const slice = createSlice({
   initialState, 
   extraReducers: (builder) => {
     builder
-      .addCase(register.pending, handlePending)
+      // .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, (state, action) => {
         (state.loading = false),
           (state.error = null),
           (state.user = action.payload);
       })
-      .addCase(register.rejected, handleRejected)
+      // .addCase(register.rejected, handleRejected)
 
 
       // .addCase(login.pending, handlePending)
-      // .addCase(login.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.error = null;
-      //   state.items.push(action.payload);
-      // })
+      .addCase(login.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items.push(action.payload);
+      })
       // .addCase(login.rejected, handleRejected)
       
 
