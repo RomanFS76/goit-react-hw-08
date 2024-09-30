@@ -33,17 +33,13 @@ const RegistrationPage = () => {
 
   return (
     <div>
-      <h1>Log In your account</h1>
+      <h1>Please Log In</h1>
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
         // validationSchema={FeedbackSchema}
       >
         <Form autoComplete="on">
-          {/* <label className={css.label}>
-            Name
-            <Field type="text" name="name" className={css.field}></Field>
-          </label> */}
           <label className={css.label}>
             Email
             <Field type="email" name="email" className={css.field}></Field>

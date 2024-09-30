@@ -1,15 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { register, login, logOut,refresh } from "./operations";
-
-
-
-// const handlePending = (state) => {
-//   state.loading = true;
-// };
-
-// const handleRejected = (state, action) => {
-//   (state.loading = false), (state.error = action.payload);
-// };
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { register, login, logout, refreshUser } from "./operations";
 
 const initialState = {
   user: {
@@ -19,54 +9,46 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
-}
+};
 
 const slice = createSlice({
   name: "auth",
-  initialState, 
+  initialState,
   extraReducers: (builder) => {
     builder
-      // .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, (state, action) => {
-        (state.loading = false),
-          (state.error = null),
-          (state.user = action.payload);
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
       })
-      // .addCase(register.rejected, handleRejected)
 
-
-      // .addCase(login.pending, handlePending)
       .addCase(login.fulfilled, (state, action) => {
-        state.loading = false;
-        state.error = null;
-        state.items.push(action.payload);
+        state.user = action.payload.user;
+        state.token = action.payload.token;
+        state.isLoggedIn = true;
       })
-      // .addCase(login.rejected, handleRejected)
-      
+      .addCase(logout.fulfilled, () => {
+        return initialState;
+      })
+      .addCase(refreshUser.pending, (state) => {
+        state.isRefreshing = true;
+      })
+      .addCase(refreshUser.fulfilled, (state, action) => {
+        state.user = action.payload;
+        state.isRefreshing = false;
+        state.isLoggedIn = true;
+      })
+      .addCase(refreshUser.rejected, (state) => {
+        state.isRefreshing = false;
+      })
 
-      // .addCase(logOut.pending, handlePending)
-      // .addCase(logOut.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.error = null;
-      //   state.items = state.items.filter(
-      //     (item) => item.id !== action.payload.id
-      //   );
+      // .addMatcher(isAnyOf(register.pending, login.pending), (state) => {
+      //   state.isLoggedIn = true;
       // })
-      // .addCase(logOut.rejected, handleRejected)
-
-
-      // .addCase(refresh.pending, handlePending)
-      // .addCase(refresh.fulfilled, (state, action) => {
-      //   state.loading = false;
-      //   state.error = null;
-      //   state.items = state.items.filter(
-      //     (item) => item.id !== action.payload.id
-      //   );
-      // })
-      // .addCase(refresh.rejected, handleRejected);
+      .addMatcher(isAnyOf(register.rejected, logout.rejected), (state) => {
+        state.isLoggedIn = false;
+      });
   },
 });
 
 export const authReducer = slice.reducer;
-
-
