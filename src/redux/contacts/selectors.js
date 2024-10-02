@@ -10,7 +10,7 @@ export const selectVisibleContacts = createSelector(
   [selectContacts, selectNameFilter],
   (contacts, filters) => {
     return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filters.toLowerCase())
+      contact.name.toLowerCase().includes(filters.toLowerCase()) || contact.number.toLowerCase().includes(filters.toLowerCase())
     );
   }
 );

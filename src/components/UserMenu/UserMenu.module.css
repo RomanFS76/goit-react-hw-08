@@ -1,12 +1,11 @@
 .menuWrap {
   display: flex;
   gap: 20px;
-  font-size: 30px;
-  font-weight: 700;
 }
 
 .logOut {
-  font-size: 20px;
-  width: 100px;
-  font-weight: 700;
+    font-weight: 700;
+  background-color: transparent;
+
+
 }

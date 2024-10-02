@@ -10,15 +10,16 @@ const Contact = ({ name, number, id }) => {
   return (
     <>
       <div className={css.wrapperContact}>
-        <p className={css.contactText}>
-          <FaUser className={css.icon} />
-          {name}
-        </p>
-
-        <p className={css.contactText}>
-          <FaPhoneAlt className={css.icon} />
-          {number}
-        </p>
+        <div className={css.wrapNext}>
+          <p className={css.contactText}>
+            <FaUser className={css.icon} />
+            {name}
+          </p>
+          <p className={css.contactText}>
+            <FaPhoneAlt className={css.icon} />
+            {number}
+          </p>
+        </div>
 
         <button
           type="button"

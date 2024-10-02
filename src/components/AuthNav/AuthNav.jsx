@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import css from "../AuthNav/AuthNav.module.css";
 
 
-export const AuthNav = () => {
+const AuthNav = () => {
   return (
     <div className={css.authWrap}>
       <Link to="/register" className={css.authLink}>Register</Link>
@@ -12,3 +12,4 @@ export const AuthNav = () => {
   )
 }
 
+export default AuthNav;

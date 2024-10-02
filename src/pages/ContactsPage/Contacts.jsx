@@ -20,7 +20,7 @@ const Contacts = () => {
       <ContactForm />
       <SearchBox />
       {loading && <p className="loading-text">Loading...</p>}
-      {error && <p className="error-text">{error}, try again later</p>}
+      {error && <p className="error-text">Please log in</p>}
       <ContactList />
     </div>
   )

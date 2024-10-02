@@ -19,17 +19,3 @@ createRoot(document.getElementById("root")).render(
     </Provider>
   </StrictMode>
 );
-
-// ReactDOM.createRoot(document.getElementById("root")).render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <PersistGate loading={null} persistor={persistor}>
-//         <BrowserRouter>
-//           <HelmetProvider>
-//             <App />
-//           </HelmetProvider>
-//         </BrowserRouter>
-//       </PersistGate>
-//     </Provider>
-//   </React.StrictMode>
-// );

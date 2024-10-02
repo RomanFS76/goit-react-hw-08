@@ -1,20 +1,36 @@
-.field {
-    display: block;
-    margin-bottom: 15px;
-    width: 330px;
-    margin-top: 10px;
-  }
-  
-  .label {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  
-  .btnReg {
-      width: 200px;
-      font-size: 20px;
-      font-weight: 600;
-      border: 1px solid black;
-      height: 30px;
-  
-  }
+.labelForm {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.fieldForm {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: inline-block;
+  margin-bottom: 40px;
+  border: 1px solid #767676;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.inputName {
+  margin-top: 10px;
+  display: block;
+}
+
+.btnReg {
+  width: 234px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid black;
+  height: 30px;
+}
+
+span {
+  color: red;
+  display: block;
+}

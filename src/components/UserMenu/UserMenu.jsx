@@ -5,9 +5,8 @@ import { selectUser } from "../../redux/auth/selectors";
 import css from "./UserMenu.module.css";
 
 const UserMenu = () => {
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  console.log(user.name);
+  const user = useSelector(selectUser);
 
   return (
     <div className={css.menuWrap}>
